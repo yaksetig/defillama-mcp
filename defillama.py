@@ -102,7 +102,7 @@ async def get_pool_tvl(pool: str) -> dict[str, Any]:
     data = await make_request(url)
     if isinstance(data, dict) and 'data' in data:
         return data['data'][:30]
-    return [:30]
+    return data[:30]
 
 
 async def make_request(url: str) -> dict[str, Any] | None:
