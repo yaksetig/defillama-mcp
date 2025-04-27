@@ -4,7 +4,7 @@ import json
 from mcp.server.fastmcp import FastMCP
 
 # Initialize Defillama mcp sse server
-mcp = FastMCP("defillama-mcp", host="0.0.0.0", port=8080)
+mcp = FastMCP("defillama-mcp", host="127.0.0.1", port=8080)
 
 # Constants
 DEFI_API_BASE = "https://api.llama.fi"
