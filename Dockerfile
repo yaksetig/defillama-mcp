@@ -1,22 +1,15 @@
 FROM python:3.11-slim
 
-# Set working directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Python dependencies directly
+# Install dependencies
 RUN pip install --no-cache-dir \
     fastapi==0.104.1 \
     uvicorn[standard]==0.24.0 \
-    httpx==0.25.2 \
-    pydantic==2.5.0
+    httpx==0.25.2
 
-# Copy application code
-COPY . .
+# Copy your main.py file
+COPY main.py .
 
 # Expose port
 EXPOSE 8080
